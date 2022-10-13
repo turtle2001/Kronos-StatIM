@@ -6,26 +6,29 @@
 //     }
 //     )
 //     .catch(err => console.error(err));
-
+var dropDown = document.querySelector('#xx');
 $(function () {
-    $("#xx").change(function () {
-        var y = parseInt($("#xx option:selected").val());
+	$('#xx').change(function () {
+		var y = parseInt($('#xx option:selected').val());
 
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': '51d6e0d84cmshc0d9de2b1434d7bp126665jsn3d6cfe1721c5',
-                'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
-            }
-        };
+		var options = {
+			method: 'GET',
+			headers: {
+				'X-RapidAPI-Key': '51d6e0d84cmshc0d9de2b1434d7bp126665jsn3d6cfe1721c5',
+				'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com',
+			},
+		};
 
-        fetch('https://api-nba-v1.p.rapidapi.com/teams?id=' + y, options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
-    })
-})
+		fetch('https://api-nba-v1.p.rapidapi.com/teams?id=' + y, options)
+			.then((response) => response.json())
+			.then((response) => console.log(response))
+			.catch((err) => console.error(err));
+	});
+});
 
+dropDown.addEventListener('change', function () {
+	window.location = 'http://127.0.0.1:5500/index.html#schedule';
+});
 /*
 ids
 navbar
@@ -36,6 +39,8 @@ schedule
 tickets
 photos
 contact
+
+
 
 SEATGEEK APIs
 data[0].title - Name of Event
