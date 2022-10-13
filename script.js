@@ -1,11 +1,11 @@
-//https://api.seatgeek.com/2/performers?slug=new-york-mets
-// fetch("https://api.seatgeek.com/2/events?taxonomies.name=nba&per_page=20&client_id=Mjk2NTY3NDJ8MTY2NTUxMzQ3Mi4xMjA1OTg")
-//     .then(response => response.json())
-//     .then(function (data) {
-//         console.log(data);
-//     }
-//     )
-//     .catch(err => console.error(err));
+https://api.seatgeek.com/2/performers?slug=new-york-mets
+fetch("https://api.seatgeek.com/2/events?taxonomies.name=nba&per_page=20&client_id=Mjk2NTUxNTN8MTY2NTUwNzk5MC40MTU0OTg3")
+    .then(response => response.json())
+    .then(function (data) {
+        console.log(data);
+    }
+    )
+    .catch(err => console.error(err));
 var dropDown = document.querySelector('#xx');
 $(function () {
 	$('#xx').change(function () {
