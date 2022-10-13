@@ -6,6 +6,10 @@ fetch("https://api.seatgeek.com/2/events?taxonomies.name=nba&per_page=20&client_
     )
     .catch(err => console.error(err));
 
+
+
+
+
 const options = {
     method: 'GET',
     headers: {
@@ -23,7 +27,7 @@ fetch('https://api-nba-v1.p.rapidapi.com/teams?code=SAC', options)
 
 
 
-
-    //data[0].title
-    //data[0].datetime_local
-    //data[0].url (for tickets)
+    //SEATGEEK APIs
+    //data[0].title - Name of Event
+    //data[0].datetime_local -Time of Event 
+    //data[0].url (for tickets) - Link for tickets
