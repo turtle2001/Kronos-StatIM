@@ -6,22 +6,6 @@ fetch("https://api.seatgeek.com/2/events?taxonomies.name=nba&per_page=20&client_
     )
     .catch(err => console.error(err));
 
-
-// fetch("https://api-nba-v1.p.rapidapi.com/teams?id=1", {
-//     "method": "GET",
-//     "headers": {
-//         "x-rapidapi-host": "api-nba-v1.p.rapidapi.com",
-//         "x-rapidapi-key": "51d6e0d84cmshc0d9de2b1434d7bp126665jsn3d6cfe1721c5"
-//     }
-// })
-//     .then(response => {
-//         console.log(response);
-//     })
-//     .catch(err => {
-//         console.log(err);
-//     });
-
-
 const options = {
     method: 'GET',
     headers: {
