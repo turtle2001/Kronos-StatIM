@@ -7,7 +7,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <script src="https://kit.fontawesome.com/e9a07cb6b6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
     <title>Project</title>
 </head>
 
@@ -20,14 +23,14 @@
             <i class="fa-brands fa-nfc-directional fa-2x"></i>
             <p>Home</p>
         </a>
-        <a href="#photos" class="w3-bar-item w3-button w3-padding-large">
+        <a href="#teams" class="w3-bar-item w3-button w3-padding-large">
             <i class="fa-solid fa-basketball fa-2x"></i>
             <p>Team</p>
-            <a href="#photos" class="w3-bar-item w3-button w3-padding-large">
+            <a href="#schedule" class="w3-bar-item w3-button w3-padding-large">
                 <i class="fa-solid fa-calendar-days fa-2x"></i>
                 <p>Schedule</p>
             </a>
-            <a href="#about" class="w3-bar-item w3-button w3-padding-large">
+            <a href="#tickets" class="w3-bar-item w3-button w3-padding-large">
                 <i class="fa-solid fa-ticket fa-2x"></i>
                 <p>Tickets</p>
             </a>
@@ -41,8 +44,9 @@
     <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
         <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
             <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-            <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-            <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+            <a href="#teams" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+            <a href="#schedule" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+            <a href="#tickets" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
             <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
         </div>
     </div>
@@ -53,8 +57,15 @@
             <h1 class="w3-jumbo"> NBA</h1>
         </header>
         <!-- About Section -->
-        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-            <h2 class="w3-text-light-grey"></h2>
+
+        <!--Home Section added changed id to home-->
+        <!--Add more content to push down page to tickets maybe after paragraph-->
+        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="teams">
+            <h2 class="w3-text-light-grey">My Name</h2>
+
+       
+          
+
             <hr style="width:200px" class="w3-opacity">
 
             <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod
@@ -68,7 +79,7 @@
             </p>
             <!--Maybe end section home here-->
             <!--This could start the ticket section added an id for tickets-->
-            <h3 class="w3-padding-16 w3-text-light-grey" id="TicketsSec">My Skills</h3>
+            <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
             <p class="w3-wide">Photography</p>
             <div class="w3-white">
                 <div class="w3-dark-grey" style="height:28px;width:95%"></div>
@@ -106,7 +117,7 @@
         <div class="w3-row-padding" style="margin:0 -16px">
             <div class="w3-half w3-margin-bottom">
                 <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-                    <li class="w3-dark-grey w3-xlarge w3-padding-32">Schedule</li>
+                    <li class="w3-dark-grey w3-xlarge w3-padding-32"id="schedule">Schedule</li>
                     <li class="w3-padding-16">Web Design</li>
                     <li class="w3-padding-16">Photography</li>
                     <li class="w3-padding-16">5GB Storage</li>
@@ -122,7 +133,7 @@
             </div>
             <div class="w3-half">
                 <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-                    <li class="w3-dark-grey w3-xlarge w3-padding-32">Tickets</li>
+                    <li class="w3-dark-grey w3-xlarge w3-padding-32" id="tickets">Tickets</li>
                     <li class="w3-padding-16">Web Design</li>
                     <li class="w3-padding-16">Photography</li>
                     <li class="w3-padding-16">50GB Storage</li>
@@ -204,7 +215,7 @@
             </div>
             <!-- End Grid/Pricing tables -->
             <!-- Portfolio Section -->
-            <div class="w3-padding-64 w3-content" id="photos">
+            <div class="w3-padding-64 w3-content" id="tickets">
                 <h2 class="w3-text-light-grey">My Photos</h2>
                 <hr style="width:200px" class="w3-opacity">
                 <!-- Grid for photos -->
