@@ -18,7 +18,7 @@ const options = {
     }
 };
 
-fetch('https://api-nba-v1.p.rapidapi.com/teams?code=SAC', options)
+fetch('https://api-nba-v1.p.rapidapi.com/teams?', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
