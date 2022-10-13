@@ -43,10 +43,7 @@ selectYear = document.getElementById("year");
 selectMonth = document.getElementById("month");
 
 
-createYear = generate_year_range(1970, 2050);
-/** or
- * createYear = generate_year_range( 1970, currentYear );
- */
+createYear = generate_year_range(currentYear, currentYear + 1);
 
 document.getElementById("year").innerHTML = createYear;
 
@@ -60,20 +57,8 @@ var monthDefault = ["January", "February", "March", "April", "May", "June", "Jul
 
 var dayDefault = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-if (lang == "en") {
-    months = monthDefault;
-    days = dayDefault;
-} else if (lang == "id") {
-    months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
-    days = ["Ming", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"];
-} else if (lang == "fr") {
-    months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
-    days = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
-} else {
-    months = monthDefault;
-    days = dayDefault;
-}
-
+months = monthDefault;
+days = dayDefault;
 
 var $dataHead = "<tr>";
 for (dhead in days) {
@@ -110,28 +95,26 @@ function jump() {
 
 function showCalendar(month, year) {
 
-    var firstDay = ( new Date( year, month ) ).getDay();
+    var firstDay = (new Date(year, month)).getDay();
 
     tbl = document.getElementById("calendar-body");
 
-    
+
     tbl.innerHTML = "";
 
-    
+
     monthAndYear.innerHTML = months[month] + " " + year;
     selectYear.value = year;
     selectMonth.value = month;
 
     // creating all cells
     var date = 1;
-    for ( var i = 0; i < 6; i++ ) {
-        
+    for (var i = 0; i < 6; i++) {
         var row = document.createElement("tr");
 
-        
-        for ( var j = 0; j < 7; j++ ) {
-            if ( i === 0 && j < firstDay ) {
-                cell = document.createElement( "td" );
+        for (var j = 0; j < 7; j++) {
+            if (i === 0 && j < firstDay) {
+                cell = document.createElement("td");
                 cellText = document.createTextNode("");
                 cell.appendChild(cellText);
                 row.appendChild(cell);
@@ -146,19 +129,15 @@ function showCalendar(month, year) {
                 cell.className = "date-picker";
                 cell.innerHTML = "<span>" + date + "</span>";
 
-                if ( date === today.getDate() && year === today.getFullYear() && month === today.getMonth() ) {
+                if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.className = "date-picker selected";
                 }
                 row.appendChild(cell);
                 date++;
             }
-
-
         }
-
         tbl.appendChild(row);
     }
-
 }
 
 function daysInMonth(iMonth, iYear) {
