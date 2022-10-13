@@ -37,32 +37,8 @@ tickets
 photos
 contact
 
-<<<<<<< HEAD
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '51d6e0d84cmshc0d9de2b1434d7bp126665jsn3d6cfe1721c5',
-        'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com'
-    }
-};
-
-fetch('https://api-nba-v1.p.rapidapi.com/teams?', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
-
-
-
-
-
-    //SEATGEEK APIs
-    //data[0].title - Name of Event
-    //data[0].datetime_local -Time of Event 
-    //data[0].url (for tickets) - Link for tickets
-=======
 SEATGEEK APIs
 data[0].title - Name of Event
 data[0].datetime_local -Time of Event
 data[0].url (for tickets) - Link for tickets
 */
->>>>>>> 6408b51b511e12f78da8a356188fccf095715388
