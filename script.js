@@ -7,6 +7,9 @@ fetch("https://api.seatgeek.com/2/events?taxonomies.name=nba&per_page=20&client_
     .catch(err => console.error(err));
 
 
+
+
+
 const options = {
     method: 'GET',
     headers: {
