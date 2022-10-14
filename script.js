@@ -19,6 +19,7 @@ $(function () {
                     .then(function (data2) {
                         console.log(data2)
                         $("#list").empty();
+                        $("#time").empty();
                         for (var i = 0; i < 5; i++) {
                             var teamEl = $("<li></li>").text(data2.events[i].title);
                             $("#list").append(teamEl);
