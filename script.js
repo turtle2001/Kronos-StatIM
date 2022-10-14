@@ -19,7 +19,7 @@ $(function () {
                     .then(function (data2) {
                         console.log(data2)
                         $("#table").empty();
-                        for (var i = 0; i < 5; i++) {
+                        for (var i = 0; i < 10; i++) {
                             var table = $("<tr></tr>");
                             var teamEl = $("<td></td>").text(data2.events[i].title);
                             var eventTime = $("<td></td>").text(data2.events[i].datetime_local);
@@ -59,7 +59,7 @@ function currentDiv(n) {
 function showDivs(n) {
     var i;
     var x = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
+    var dots = document.getElementsByClassName("slides");
     var captionText = document.getElementById("caption");
     if (n > x.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = x.length }
