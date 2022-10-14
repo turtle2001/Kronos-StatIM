@@ -18,10 +18,16 @@ $(function () {
             .then((response) => response.json())
             .then(function (data) {
                 team = data.response[0].name;
+                console.log(team)
                 fetch("https://api.seatgeek.com/2/events?q=" + team + "&per_page=20&client_id=Mjk2NTY3NDJ8MTY2NTUxMzQ3Mi4xMjA1OTg")
-                    .then(response => response.json())
-                    .then(console.log(data))
-                    .catch(err => console.error(err));
+                    .then(response2 => response2.json())
+                    .then(function (data2) {
+                        for (var i = 0; i < data2.events.length; i++) {
+                            console.log(data2.events[i].title)
+                        }
+                        console.log(data2)
+                    })
+                    .catch(err2 => console.error(err2));
 
             })
             .catch((err) => console.error(err));
