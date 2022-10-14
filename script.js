@@ -18,13 +18,13 @@ $(function () {
                     .then(response2 => response2.json())
                     .then(function (data2) {
                         console.log(data2)
-                        $("#list").empty();
-                        $("#time").empty();
+                        $("#table").empty();
                         for (var i = 0; i < 5; i++) {
-                            var teamEl = $("<li></li>").text(data2.events[i].title);
-                            $("#list").append(teamEl);
-                            var eventTime = $("<li></li>").text(data2.events[i].datetime_local);
-                            $("#time").append(eventTime);
+                            var table = $("<tr></tr>");
+                            var teamEl = $("<td></td>").text(data2.events[i].title);
+                            var eventTime = $("<td></td>").text(data2.events[i].datetime_local);
+                            var eventPrice = $("<td></td>").text(data2.events[i].stats.average_price);
+                            $("#table").append(table, teamEl, eventTime, eventPrice);
                         }
                     }
                     )
