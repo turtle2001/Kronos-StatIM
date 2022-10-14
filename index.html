@@ -55,56 +55,108 @@
             <h1 class="w3-jumbo"> NBA</h1>
         </header>
         <!-- About Section -->
+        <div class="w3-container w3-margin-left">
 
+            <h2 class="w3-container w3-center" >W3.CSS Lightbox</h2>
+            <p></p>
+            <div class="w3-row-padding w3-margin-left" style="margin:10px">
+              <div class="w3-col s4">
+                <img src="placeholder.png" style="width:100%;cursor:pointer"
+                onclick="openModal();currentDiv(1)" class="w3-hover-shadow">
+              </div>
+              <div class="w3-col s4">
+                <img src="placeholder.png" style="width:100%;cursor:pointer"
+                onclick="openModal();currentDiv(2)" class="w3-hover-shadow">
+              </div>
+              <div class="w3-col s4">
+                <img src="placeholder.png" style="width:100%;cursor:pointer"
+                onclick="openModal();currentDiv(3)" class="w3-hover-shadow">
+              </div>
+            </div>
+            
+            <div id="myModal" class="w3-modal w3-black">
+             <span class="w3-text-white w3-xxlarge w3-hover-text-grey w3-container w3-display-topright" onclick="closeModal()" style="cursor:pointer">×</span>
+             <div class="w3-modal-content">
+            
+              <div class="w3-content" style="max-width:1200px">
+               <img class="mySlides" src="placeholder.png" style="width:100%">
+               <img class="mySlides" src="placeholder.png" style="width:100%">
+               <img class="mySlides" src="placeholder.png" style="width:100%">
+               <div class="w3-row w3-black w3-center">
+                <div class="w3-display-container">
+                 <p id="caption"></p>
+                 <span class="w3-display-left w3-btn" onclick="plusDivs(-1)">❮</span>
+                 <span class="w3-display-right w3-btn" onclick="plusDivs(1)">❯</span>
+                </div>
+                <div class="w3-col s4">
+                 <img class="demo w3-opacity w3-hover-opacity-off" src="placeholder.png" style="width:100%" onclick="currentDiv(1)" alt="Nature and sunrise">
+                </div>
+                <div class="w3-col s4">
+                 <img class="demo w3-opacity w3-hover-opacity-off" src="placeholder.png" style="width:100%" onclick="currentDiv(2)" alt="French Alps">
+                </div>
+                <div class="w3-col s4">
+                 <img class="demo w3-opacity w3-hover-opacity-off" src="placeholder.png" style="width:100%" onclick="currentDiv(3)" alt="Mountains and fjords">
+                </div>
+               </div> <!-- End row -->
+              </div> <!-- End w3-content -->
+              
+             </div> <!-- End modal content -->
+            </div> <!-- End modal -->
+            
+            </div>
         <!--Home Section added changed id to home-->
         <!--Add more content to push down page to tickets maybe after paragraph-->
-        <div class="w3-content w3-justify w3-text-grey w3-padding-64">
-            <h2 class="w3-text-light-grey">My Name</h2>
-            <select class="w3-select" name="option" id="dropdown">
-                <option value="" disabled selected>Choose your option</option>
-                <option value="1">Atlanta Hawks</option>
-                <option value="2">Boston Celtics</option>
-                <option value="4">Brooklyn Nets</option>
-                <option value="5">Charlotte Hornets</option>
-                <option value="6">Chicago Bulls</option>
-                <option value="7">Cleveland Cavaliers</option>
-                <option value="8">Dallas Mavericks</option>
-                <option value="9">Denver Nuggets</option>
-                <option value="10">Detroit Pistons</option>
-                <option value="11">Golden State Warriors</option>
-                <option value="14">Houston Rockets</option>
-                <option value="15">Indiana Pacers</option>
-                <option value="16">Los Angeles CLippers</option>
-                <option value="17">Los Angeles Lakers</option>
-                <option value="19">Memphis Grizzlies</option>
-                <option value="20">Miami Heat</option>
-                <option value="21">Milwaukee Bucks</option>
-                <option value="22">Minnesota Timerwolves</option>
-                <option value="23">New Orleans Pelicans</option>
-                <option value="24">New York Knicks</option>
-                <option value="25">Oklahoma City Thunder</option>
-                <option value="26">Orlando Magic</option>
-                <option value="27">Philadelphia 76ers</option>
-                <option value="28">Phoenix Suns</option>
-                <option value="29">Portland Trail Blazers</option>
-                <option value="30">Sacramento Kings</option>
-                <option value="31">San Antonio Spurs</option>
-                <option value="38">Toronto Raptors</option>
-                <option value="40">Utah Jazz</option>
-                <option value="41">Washington Wizards</option>
-            </select>
-            <button class="w3-button w3-light-grey w3-padding-large w3-section">
-                <i class="fa fa-download"></i>Text
-            </button>
-        </div>
         
         <!-- Grid for pricing tables -->
         <h3 class="w3-padding-16 w3-text-light-grey">My Price</h3>
         <div class="w3-row-padding" style="margin:0 -16px">
             <div class="w3-half w3-margin-bottom">
+                <select class="w3-select" name="option" id="dropdown">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Atlanta Hawks</option>
+                    <option value="2">Boston Celtics</option>
+                    <option value="4">Brooklyn Nets</option>
+                    <option value="5">Charlotte Hornets</option>
+                    <option value="6">Chicago Bulls</option>
+                    <option value="7">Cleveland Cavaliers</option>
+                    <option value="8">Dallas Mavericks</option>
+                    <option value="9">Denver Nuggets</option>
+                    <option value="10">Detroit Pistons</option>
+                    <option value="11">Golden State Warriors</option>
+                    <option value="14">Houston Rockets</option>
+                    <option value="15">Indiana Pacers</option>
+                    <option value="16">Los Angeles CLippers</option>
+                    <option value="17">Los Angeles Lakers</option>
+                    <option value="19">Memphis Grizzlies</option>
+                    <option value="20">Miami Heat</option>
+                    <option value="21">Milwaukee Bucks</option>
+                    <option value="22">Minnesota Timberwolves</option>
+                    <option value="23">New Orleans Pelicans</option>
+                    <option value="24">New York Knicks</option>
+                    <option value="25">Oklahoma City Thunder</option>
+                    <option value="26">Orlando Magic</option>
+                    <option value="27">Philadelphia 76ers</option>
+                    <option value="28">Phoenix Suns</option>
+                    <option value="29">Portland Trail Blazers</option>
+                    <option value="30">Sacramento Kings</option>
+                    <option value="31">San Antonio Spurs</option>
+                    <option value="38">Toronto Raptors</option>
+                    <option value="40">Utah Jazz</option>
+                    <option value="41">Washington Wizards</option>
+                </select>
                 <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
                     <li class="w3-dark-grey w3-xlarge w3-padding-32" id="schedule">Events</li>
-
+                    <div class="w3-container">
+                        <h2>Today</h2>
+                        <p>Use the Dropdown above to select a Team</p>
+                        <ul class="w3-ul">
+                          <li class="w3-hover-red">Jill</li>
+                          <li class="w3-hover-green">Eve</li>
+                          <li class="w3-hover-blue">Adam</li>
+                          <li class="w3-hover-black">Bo</li>
+                          <li class="w3-hover-orange">Anja</li>
+                        </ul>
+                      </div> 
                     <li class="w3-light-grey w3-padding-24">
                         <button class="w3-button w3-white w3-padding-large w3-hover-black">S</button>
                     </li>
@@ -114,8 +166,8 @@
                 <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
                     <li class="w3-dark-grey w3-xlarge w3-padding-32" id="tickets">Tickets</li>
                     <li class="w3-padding-16">
-                        <h2>$ 25</h2>
-                        <span class="w3-opacity">per month</span>
+                        <h2></h2>
+                        <span class="w3-opacity"></span>
                     </li>
                     <li class="w3-light-grey w3-padding-24">
                         <button class="w3-button w3-white w3-padding-large w3-hover-black">Sign Up</button>
@@ -123,20 +175,30 @@
                 </ul>
             </div>
         </div>
-        <div>
-            <!-- Testimonials -->
-            <h3 class="w3-padding-24 w3-text-light-grey" id="teams">Team</h3>
-            <img src="placeholder.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-            <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
-            <p>John Doe saved us from a web disaster.</p><br>
-
-            <img src="placeholder.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-            <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
-            <p>No one is better than John Doe.</p>
-            <!-- End About Section -->
-        </div>
     </div>
-
+      <!-- Contact Section -->
+    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+        <h2 class="w3-text-light-grey">Contact Me</h2>
+        <hr style="width:200px" class="w3-opacity">
+    
+        <div class="w3-section">
+          <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Chicago, US</p>
+          <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
+          <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+        </div><br>
+        <p>Let's get in touch. Send me a message:</p>
+    
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+          <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+          <p>
+            <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+              <i class="fa fa-paper-plane"></i> SEND MESSAGE
+            </button>
+          </p>
+        </form>
 
     <!-- Footer -->
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge" id="contact">
