@@ -1,7 +1,7 @@
+
 //https://api.seatgeek.com/2/performers?slug=new-york-mets
 //https://api.seatgeek.com/2/events?q=boston+celtics
 
-var team = "";
 $(function () {
     $('#dropdown').change(function () {
         var teamNum = parseInt($('#dropdown option:selected').val());
