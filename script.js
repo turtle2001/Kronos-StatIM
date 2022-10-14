@@ -17,11 +17,13 @@ $(function () {
                 fetch("https://api.seatgeek.com/2/events?q=" + team + "&per_page=82&client_id=Mjk2NTY3NDJ8MTY2NTUxMzQ3Mi4xMjA1OTg")
                     .then(response2 => response2.json())
                     .then(function (data2) {
-                        //console.log(data2)
+                        console.log(data2)
                         $("#list").empty();
                         for (var i = 0; i < 5; i++) {
                             var teamEl = $("<li></li>").text(data2.events[i].title);
                             $("#list").append(teamEl);
+                            var eventTime = $("<li></li>").text(data2.events[i].datetime_local);
+                            $("#time").append(eventTime);
                         }
                     }
                     )
