@@ -18,6 +18,14 @@ body{
     text-align: right;
 }
 
+#imageBackGround {
+    background-color: black;
+}
+
+#imageCenter{
+    margin-left: 15%;
+}
+
 
 
 .w3-row-padding img {margin-bottom: 12px}

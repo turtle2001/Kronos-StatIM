@@ -20,7 +20,7 @@ $(function () {
                     .then(function (data2) {
                         console.log(data2)
                         $("#table").empty();
-                        for (var i = 0; i < 5; i++) {
+                        for (var i = 0; i < 10; i++) {
                             var table = $("<tr></tr>");
                             var teamEl = $("<td></td>").text(data2.events[i].title);
                             var eventTime = $("<td></td>").text(data2.events[i].datetime_local);
