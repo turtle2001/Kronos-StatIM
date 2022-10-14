@@ -14,6 +14,7 @@ $(function () {
             .then((response) => response.json())
             .then(function (data) {
                 team = data.response[0].name;
+                console.log(team);
                 fetch("https://api.seatgeek.com/2/events?q=" + team + "&per_page=82&client_id=Mjk2NTY3NDJ8MTY2NTUxMzQ3Mi4xMjA1OTg")
                     .then(response2 => response2.json())
                     .then(function (data2) {
@@ -59,7 +60,7 @@ function currentDiv(n) {
 function showDivs(n) {
     var i;
     var x = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
+    var dots = document.getElementsByClassName("slides");
     var captionText = document.getElementById("caption");
     if (n > x.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = x.length }
