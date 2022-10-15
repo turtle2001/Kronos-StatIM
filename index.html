@@ -19,7 +19,7 @@
             <i class="fa-brands fa-nfc-directional fa-2x"></i>
             <p>Home</p>
         </a>
-        <a href="#teams" class="w3-bar-item w3-button w3-padding-large">
+        <a href="#dropdown" class="w3-bar-item w3-button w3-padding-large">
             <i class="fa-solid fa-basketball fa-2x"></i>
             <p>Team</p>
             <a href="#schedule" class="w3-bar-item w3-button w3-padding-large">
@@ -27,7 +27,7 @@
                 <p>Events</p>
             </a>
         </a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large">
+        <a href="#score-table" class="w3-bar-item w3-button w3-padding-large">
             <i class="fa-solid fa-trophy fa-2x"></i>
             <p>Scoreboard</p>
         </a>
@@ -35,16 +35,16 @@
     <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
         <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
             <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-            <a href="#teams" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-            <a href="#schedule" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
-            <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+            <a href="#dropdown" class="w3-bar-item w3-button" style="width:25% !important">TEAMS</a>
+            <a href="#schedule" class="w3-bar-item w3-button" style="width:25% !important">EVENTS</a>
+            <a href="#score-table" class="w3-bar-item w3-button" style="width:25% !important">SCOREBOARD</a>
         </div>
     </div>
     <!-- Page Content -->
     <div class="w3-padding-large" id="main">
         <!-- Header/Home -->
         <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-            <h1 class="w3-jumbo"> NBA</h1>
+            <h1 class="w3-jumbo">Kronos StatIM</h1>
         </header>
         <!-- About Section -->
         <div class="w3-container">
@@ -132,7 +132,7 @@
                 <div class="w3-margin-bottom">
                     <p class="w3-dark-grey w3-xlarge w3-padding-0">Use the Dropdown below to select a Team</p>
                     <select class="w3-select" name="option" id="dropdown">
-                        <option value="" disabled selected>Choose your option</option>
+                        <option value="" disabled selected>---Select a Team---</option>
                         <option value="1">Atlanta Hawks</option>
                         <option value="2">Boston Celtics</option>
                         <option value="4">Brooklyn Nets</option>
@@ -187,7 +187,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src=./script.js></script>
 </body>
 

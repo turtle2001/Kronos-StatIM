@@ -1,5 +1,5 @@
 var team;
-var time = moment().format("YYYY-MM-DD")
+var time = dayjs().format("YYYY-MM-DD")
 
 var options = {
     method: 'GET',
@@ -9,35 +9,44 @@ var options = {
     },
 }
 
+var team = localStorage.getItem("team");
+if(team !== null) {
+    $("#dropdown").val(team);
+    updateData();
+}
+
 $(function () {
-    $('#dropdown').change(function () {
-        var teamNum = parseInt($('#dropdown option:selected').val());
-
-        fetch('https://api-nba-v1.p.rapidapi.com/teams?id=' + teamNum, options)
-            .then((response) => response.json())
-            .then(function (data) {
-                team = data.response[0].name;
-                fetch("https://api.seatgeek.com/2/events?q=" + team + "&per_page=82&client_id=Mjk2NTY3NDJ8MTY2NTUxMzQ3Mi4xMjA1OTg")
-                    .then(response2 => response2.json())
-                    .then(function (data2) {
-                        $("#table").empty();
-                        for (var i = 0; i < 10; i++) {
-                            var table = $("<tr></tr>");
-                            var teamEl = $("<td></td>").text(data2.events[i].title);
-                            var eventTime = $("<td></td>").text(data2.events[i].datetime_local);
-                            var eventPrice = $("<td></td>").text(data2.events[i].stats.average_price);
-                            $("#table").append(table, teamEl, eventTime, eventPrice);
-                        }
-                    }
-                    )
-                    .catch(err2 => console.error(err2));
-
-            })
-            .catch((err) => console.error(err));
-        window.location.hash = "schedule";
-    });
+    $('#dropdown').change(updateData);
 });
 
+function updateData() {
+    var teamNum = parseInt($('#dropdown option:selected').val());
+
+    fetch('https://api-nba-v1.p.rapidapi.com/teams?id=' + teamNum, options)
+        .then((response) => response.json())
+        .then(function (data) {
+            team = data.response[0].name;
+            localStorage.setItem("team", teamNum);
+            fetch("https://api.seatgeek.com/2/events?q=" + team + "&per_page=82&client_id=Mjk2NTY3NDJ8MTY2NTUxMzQ3Mi4xMjA1OTg")
+                .then(response2 => response2.json())
+                .then(function (data2) {
+                    $("#table").empty();
+                    for (var i = 0; i < 10; i++) {
+                        var table = $("<tr></tr>");
+                        var teamEl = $("<td></td>").text(data2.events[i].title);
+                        var eventTime = $("<td></td>").text(dayjs(data2.events[i].datetime_local).format("MM-DD-YYYY, h:mm:A"));
+                        var eventPrice = $("<td></td>").text(data2.events[i].stats.average_price);
+                        $("#table").append(table, teamEl, eventTime, eventPrice);
+                        
+                    }
+                }
+                )
+                .catch(err2 => console.error(err2));
+
+        })
+        .catch((err) => console.error(err));
+    window.location.hash = "schedule";
+}
 
 fetch('https://api-nba-v1.p.rapidapi.com/games?date=' + time, options)
     .then(response => response.json())
