@@ -10,7 +10,7 @@ var options = {
 }
 
 var team = localStorage.getItem("team");
-if(team !== null) {
+if (team !== null) {
     $("#dropdown").val(team);
     updateData();
 }
@@ -31,13 +31,17 @@ function updateData() {
                 .then(response2 => response2.json())
                 .then(function (data2) {
                     $("#table").empty();
+                    var header = $("<tr></tr>");
+                    var h1 = $("<th></th>").text("Event");
+                    var h2 = $("<th></th>").text("Time");
+                    var h3 = $("<th></th>").text("Average Price");
+                    $("#table").append(h1, h2, h3);
                     for (var i = 0; i < 10; i++) {
                         var table = $("<tr></tr>");
                         var teamEl = $("<td></td>").text(data2.events[i].title);
-                        var eventTime = $("<td></td>").text(dayjs(data2.events[i].datetime_local).format("MM-DD-YYYY, h:mm:A"));
+                        var eventTime = $("<td></td>").text(dayjs(data2.events[i].datetime_local).format("MM-DD-YYYY, h:mm A"));
                         var eventPrice = $("<td></td>").text(data2.events[i].stats.average_price);
                         $("#table").append(table, teamEl, eventTime, eventPrice);
-                        
                     }
                 }
                 )
@@ -51,12 +55,19 @@ function updateData() {
 fetch('https://api-nba-v1.p.rapidapi.com/games?date=' + time, options)
     .then(response => response.json())
     .then(function (data) {
-        for (var i = 0; i < data.response.length; i++) {
-            var table = $("<tr></tr>");
-            var game = $("<td></td>").text(data.response[i].teams.visitors.name + " at " + data.response[i].teams.home.name);
-            var score = $("<td></td>").text(data.response[i].scores.home.points + "-"+ data.response[i].scores.visitors.points);
-            $("#score-table").append(table, game, score);
-        }
+        if (data.response.length > 0)
+            for (var i = 0; i < data.response.length; i++) {
+                var table = $("<tr></tr>");
+                var game = $("<td></td>").text(data.response[i].teams.visitors.name + " at " + data.response[i].teams.home.name);
+                var score = $("<td></td>").text(data.response[i].scores.home.points + "-" + data.response[i].scores.visitors.points);
+                $("#score-table").append(table, game, score);
+            }
+            else{
+                var table = $("<tr></tr>");
+                var nogame =  $("<td></td>").text("No games today")
+                $("#score-table").append(table, nogame);
+            }
+
     })
     .catch(err => console.error(err));
 
@@ -96,8 +107,3 @@ function showDivs(n) {
     dots[slideIndex - 1].className += " w3-opacity-off";
     captionText.innerHTML = dots[slideIndex - 1].alt;
 }
-
-// SEATGEEK APIs
-// data[0].title - Name of Event
-// data[0].datetime_local -Time of Event
-// data[0].url (for tickets) - Link for tickets
