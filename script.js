@@ -1,6 +1,7 @@
-var team;
-var time = dayjs().format("YYYY-MM-DD")
+var team;   //curretn tema
+var time = dayjs().format("YYYY-MM-DD") //current time
 
+//required for NBA API access
 var options = {
     method: 'GET',
     headers: {
@@ -8,6 +9,7 @@ var options = {
         'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com',
     },
 }
+
 
 var team = localStorage.getItem("team");
 if (team !== null) {
@@ -20,16 +22,18 @@ $(function () {
 });
 
 function updateData() {
+    //gets attatched ID value for selected team
     var teamNum = parseInt($('#dropdown option:selected').val());
 
     fetch('https://api-nba-v1.p.rapidapi.com/teams?id=' + teamNum, options)
         .then((response) => response.json())
         .then(function (data) {
-            team = data.response[0].name;
+            team = data.response[0].name;   //gets team name form ID
             localStorage.setItem("team", teamNum);
             fetch("https://api.seatgeek.com/2/events?q=" + team + "&per_page=82&client_id=Mjk2NTY3NDJ8MTY2NTUxMzQ3Mi4xMjA1OTg")
                 .then(response2 => response2.json())
                 .then(function (data2) {
+                    //makes table disaplying events, time, and price
                     $("#table").empty();
                     var header = $("<tr></tr>");
                     var h1 = $("<th></th>").text("Event");
@@ -46,12 +50,13 @@ function updateData() {
                 }
                 )
                 .catch(err2 => console.error(err2));
-
         })
         .catch((err) => console.error(err));
+        //goes to schedule section of page when team is selected
     window.location.hash = "schedule";
 }
 
+//displays dates on current day
 fetch('https://api-nba-v1.p.rapidapi.com/games?date=' + time, options)
     .then(response => response.json())
     .then(function (data) {

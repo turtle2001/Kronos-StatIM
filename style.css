@@ -11,13 +11,6 @@ body{
     width: 75px;
 }
 
-#list{
-    text-align: left;
-}
-#time{
-    text-align: right;
-}
-
 #imageBackGround {
     background-color: black;
 }
@@ -25,8 +18,6 @@ body{
 #imageCenter{
     margin-left: 15%;
 }
-
-
 
 .w3-row-padding img {margin-bottom: 12px}
 /* Set the width of the sidebar to 120px */
