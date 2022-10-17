@@ -1,4 +1,4 @@
-var team;   //curretn tema
+var team;   //current tema
 var time = dayjs().format("YYYY-MM-DD") //current time
 
 //required for NBA API access
@@ -9,7 +9,6 @@ var options = {
         'X-RapidAPI-Host': 'api-nba-v1.p.rapidapi.com',
     },
 }
-
 
 var team = localStorage.getItem("team");
 if (team !== null) {
@@ -33,7 +32,7 @@ function updateData() {
             fetch("https://api.seatgeek.com/2/events?q=" + team + "&per_page=82&client_id=Mjk2NTY3NDJ8MTY2NTUxMzQ3Mi4xMjA1OTg")
                 .then(response2 => response2.json())
                 .then(function (data2) {
-                    //makes table disaplying events, time, and price
+                    //makes table disaplying events with a link to seatgeek, time, and price
                     $("#table").empty();
                     var header = $("<tr></tr>");
                     var h1 = $("<th></th>").text("Event");
