@@ -1,7 +1,7 @@
 # Kronos-StatIM
 
 ## Deployed Link
-
+https://turtle2001.github.io/Kronos-StatIM/
 
 ## Site Picture
 ![Kronos (1)](https://user-images.githubusercontent.com/110750833/196051420-330fa0ae-3f68-4f38-a1f1-9b0eeb4cc0f3.gif)

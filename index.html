@@ -13,22 +13,27 @@
 </head>
 
 <body class="w3-black">
+    <!-- Navigation section -->
     <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
         <img src="./images/Kobe_Symbol.png" class="bryant w3-bar-item w3-button w3-padding-large w3-black">
+        <!-- Home button that lets users navigate the to Home part of the webpage -->
         <a href="#" class="w3-bar-item w3-button w3-padding-large">
             <i class="fa-brands fa-nfc-directional fa-2x"></i>
             <p>Home</p>
         </a>
         <a href="#dropdown" class="w3-bar-item w3-button w3-padding-large">
+            <!-- Team button that lets users to go to the Team section -->
             <i class="fa-solid fa-basketball fa-2x"></i>
             <p>Team</p>
             <a href="#schedule" class="w3-bar-item w3-button w3-padding-large">
+                <!-- Event button that allows users to go to the Events section-->
                 <i class="fa-solid fa-calendar-days fa-2x"></i>
                 <p>Events</p>
             </a>
         </a>
         <a href="#score-table" class="w3-bar-item w3-button w3-padding-large">
             <i class="fa-solid fa-trophy fa-2x"></i>
+            <!-- Scoreboard button that allows users to go to the Scoreboard -->
             <p>Scoreboard</p>
         </a>
     </nav>
@@ -46,6 +51,7 @@
         <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
             <h1 class="w3-jumbo">Kronos StatIM</h1>
         </header>
+        <!-- Hover/Animation element for pictures -->
         <div class="w3-container">
             <h2 class="w3-container w3-center"></h2>
             <div class="w3-row-padding" style="margin:0 -16px">
@@ -74,7 +80,7 @@
                         class="w3-hover-shadow w3-image w3-hover-opacity">
                 </div>
             </div>
-
+            <!-- Modal for pictures -->
             <div id="myModal" class="w3-modal w3-black">
                 <span class="w3-text-white w3-xxlarge w3-hover-text-grey w3-container w3-display-topright"
                     onclick="closeModal()" style="cursor:pointer">×</span>
@@ -185,11 +191,8 @@
             </div>
         </div><br>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script src=./script.js></script>
-</body>
-
-</html>
+    <script src=./script.js> </script> </body> </html>
