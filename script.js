@@ -42,17 +42,17 @@ function updateData() {
                     $("#table").append(h1, h2, h3);
                     for (var i = 0; i < 10; i++) {
                         var table = $("<tr></tr>");
-                        var teamEl = $("<td></td>").text(data2.events[i].title);
+                        var teamEL = '<td><a href="' + data2.events[i].url + '">' + data2.events[i].title + '</a></td>';
                         var eventTime = $("<td></td>").text(dayjs(data2.events[i].datetime_local).format("MM-DD-YYYY, h:mm A"));
                         var eventPrice = $("<td></td>").text(data2.events[i].stats.average_price);
-                        $("#table").append(table, teamEl, eventTime, eventPrice);
+                        $("#table").append(table, teamEL, eventTime, eventPrice);
                     }
                 }
                 )
                 .catch(err2 => console.error(err2));
         })
         .catch((err) => console.error(err));
-        //goes to schedule section of page when team is selected
+    //goes to schedule section of page when team is selected
     window.location.hash = "schedule";
 }
 
@@ -67,11 +67,11 @@ fetch('https://api-nba-v1.p.rapidapi.com/games?date=' + time, options)
                 var score = $("<td></td>").text(data.response[i].scores.home.points + "-" + data.response[i].scores.visitors.points);
                 $("#score-table").append(table, game, score);
             }
-            else{
-                var table = $("<tr></tr>");
-                var nogame =  $("<td></td>").text("No games today")
-                $("#score-table").append(table, nogame);
-            }
+        else {
+            var table = $("<tr></tr>");
+            var nogame = $("<td></td>").text("No games today")
+            $("#score-table").append(table, nogame);
+        }
 
     })
     .catch(err => console.error(err));
