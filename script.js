@@ -1,4 +1,4 @@
-var team;   //current tema
+var team;   //current team
 var time = dayjs().format("YYYY-MM-DD") //current time
 
 //required for NBA API access
@@ -74,10 +74,12 @@ fetch('https://api-nba-v1.p.rapidapi.com/games?date=' + time, options)
 
     })
     .catch(err => console.error(err));
+// function to open that modal to show big image in details
 
 function openModal() {
     document.getElementById('myModal').style.display = "block";
 }
+// closing the modal
 
 function closeModal() {
     document.getElementById('myModal').style.display = "none";
@@ -85,6 +87,7 @@ function closeModal() {
 
 var slideIndex = 1;
 showDivs(slideIndex);
+// function to show those images divs
 
 function plusDivs(n) {
     showDivs(slideIndex += n);
